@@ -2,13 +2,15 @@ import discord
 from server import Server
 from settings import Ds
 
-client = discord.Client()
+intents = discord.Intents.all()
+
+client = discord.Client(intents=intents)
 CHANNEL = None
 ids = {}
 
 
-def start_ds():
-    client.run(Ds.TOKEN)
+async def start_ds():
+    await client.start(Ds.TOKEN)
 
 
 @client.event

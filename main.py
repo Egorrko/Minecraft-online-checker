@@ -21,6 +21,6 @@ async def heartbeat(delay=DELAY):
 if __name__ == '__main__':
     read(servers)
     loop = asyncio.get_event_loop()
-    loop.create_task(heartbeat())
     loop.create_task(ds.start_ds())
+    loop.create_task(heartbeat())
     loop.run_forever()
